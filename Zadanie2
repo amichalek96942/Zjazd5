@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    int x = 0; // zmienna do wczytywania pomiarow
+    int y = 0; // zmienna liczaca ilosc poprawnych pomiarow
+    int z = 0; // suma wczytanych pomiarow
+
+    while (1)
+    {
+        scanf("%d", &x);
+
+            if (x < -50 || x > 50)
+            {
+                break;
+            }
+        z = z + x;
+        y = y + 1;
+    }
+
+    if (y == 0)
+    {
+        printf("0 0\n");
+    }
+    else
+    {
+        printf("%d %d\n", y, z/y);
+    }
+
+    return 0;
+}
