@@ -1,0 +1,44 @@
+//Zadanie 4
+// Program implementuje prosty kalkulator działający w pętli. Na wejściu podawane są dwie liczby całkowite,
+// następnie znak operacji (`+`,`-`, `*`, `/`, `%`, `=`). Instrukcja switch wybiera odpowiednią operację.
+// Program wyświetla wynik. Znak `=` kończy działanie programu i  wyświetla sumę np. 10 10 = ma wyświetlić 20.
+// Dla dzielenia przez zero wyświetlany jest komunikat `BLAD`.
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    char op; //operator
+    printf("Podaj dwie liczby:\n");
+    scanf("%d %d", &a, &b);
+    printf("Podaj operacje do wykonania: \n");
+    scanf(" %c", &op);
+
+    switch (op)
+    {
+    case '+':
+        printf("Wynik: %d\n", a + b);
+        break;
+    case '-':
+        printf("Wynik: %d\n", a - b);
+        break;
+    case '*':
+        printf("Wynik: %d\n", a * b);
+        break;
+    case '/':
+        if (b != 0)
+        {
+            printf("Wynik: %d\n", a / b);
+            break;
+        }
+        else printf("BLAD \n");
+    case '%':
+        printf("Wynik: %d\n", a % b);
+        break;
+    case '=':
+        printf("Wynik: %d\n", a + b);
+        break;
+    }
+
+    return 0;
+}
