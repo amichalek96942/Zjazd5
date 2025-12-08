@@ -1,0 +1,29 @@
+//Zadanie 5
+//Na wejściu podana jest liczba całkowita dodatnia. Program sprawdza czy jest palindromem
+//(czytana od lewej i prawej strony jest taka sama). Na wyjściu wyświetlane jest `TAK` lub `NIE`.
+//Następnie, jeśli liczba nie jest palindromem,wyświetlana jest liczba cyfr wymagających zmiany.
+
+
+#include <stdio.h>
+
+int main() {
+    int liczba;
+    scanf("%d", &liczba);
+
+    int kopia_liczba = liczba;
+    int odwrocona_liczba = 0;
+        while (liczba > 0)
+        {
+        odwrocona_liczba = odwrocona_liczba * 10 + liczba % 10;
+        liczba = liczba / 10;
+        }
+    if (odwrocona_liczba == kopia_liczba)
+    {
+        printf("TAK");
+    } else
+    {
+        printf("NIE, bo liczba: %d\n a odwrocona liczba: %d\n", kopia_liczba, odwrocona_liczba);
+    }
+
+    return 0;
+}
