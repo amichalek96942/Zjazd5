@@ -1,0 +1,59 @@
+Zadanie (0.10 pkt)
+Program implementuje konwerter jednostek z menu. Działanie odbywa się w pętli do-while. Dla każdej iteracji: 
+
+Wczytywany jest typ konwersji (liczba 1-4): 
+  - `1` = cm → cale (dzielenie przez 2.54) 
+
+  - `2` = cale → cm (mnożenie przez 2.54) 
+
+  - `3` = kg → funty (mnożenie przez 2.205) 
+
+  - `4` = funty → kg (dzielenie przez 2.205) 
+
+  - `0` = KONIEC programu 
+
+Jeśli wybrano 1-4, wczytywana jest wartość i wykonywana jest konwersja używając switch 
+Wyświetlany jest wynik(zaokrąglony w dół)
+
+
+
+#include <stdio.h>
+
+int main() {
+
+    int typ_konwersji = 0;
+    int wartosc = 0;
+    int wynik_konwersji = 0;
+
+    do{
+        scanf("%d", &typ_konwersji);
+
+        switch (typ_konwersji)
+        {
+        case 1:
+            scanf("%d", &wartosc);
+            wynik_konwersji = wartosc / 2.54;
+            printf("%d\n", wynik_konwersji);
+            break;
+        case 2:
+            scanf("%d", &wartosc);
+            wynik_konwersji = wartosc * 2.54;
+            printf("%d\n", wynik_konwersji);
+            break;
+        case 3:
+            scanf("%d", &wartosc);
+            wynik_konwersji = wartosc * 2.205;
+            printf("%d\n", wynik_konwersji);
+            break;
+        case 4:
+            scanf("%d", &wartosc);
+            wynik_konwersji = wartosc / 2.205;
+            printf("%d\n", wynik_konwersji);
+            break;
+        default:
+            return 0;
+        }
+    } while (typ_konwersji > 0 && typ_konwersji <5);
+
+    return 0;
+}
