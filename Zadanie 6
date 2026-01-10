@@ -1,0 +1,45 @@
+Na wejściu podana jest liczba punktów (0-100) uzyskana na egzaminie. Instrukcja switch przypisuje ocenę literową według skali: 
+
+- 90-100: A 
+
+- 80-89: B 
+
+- 70-79: C 
+
+- 60-69: D 
+
+- 0-59: F Aby zastosować switch z zakresami, liczba punktów dzielona jest przez 10. *
+
+#include <stdio.h>
+
+int main()
+{
+    int punkty = 0;
+
+    scanf("%d", &punkty);
+
+    switch (punkty/10)
+    {
+    case 10:
+        printf("A\n");
+        break;
+    case 9:
+        printf("A\n");
+        break;
+    case 8:
+        printf("B\n");
+        break;
+    case 7:
+        printf("C\n");
+        break;
+    case 6:
+        printf("D\n");
+        break;
+    default:
+        printf("F\n");
+    }
+
+
+
+    return 0;
+}
