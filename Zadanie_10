@@ -1,0 +1,30 @@
+Zadanie (0.10 pkt)
+Na wejściu podane są dwie liczby całkowite A i B (obie 1-999). Program wyświetla proces mnożenia "w słupku":najpierw wynik końcowy, potem każdy krok pośredni (mnożenie przez kolejne cyfry B od prawej).
+
+#include <stdio.h>
+
+int main() {
+
+    int A = 0;
+    int B = 0;
+    int wynik = 0;
+
+    scanf("%d %d", &A, &B);
+
+    wynik = A * B;
+
+    printf("%d\n", wynik);
+
+    int b = B;
+
+    while (b > 0)
+    {
+        int cyfra = b % 10;
+        printf("%d\n", A * cyfra);
+
+        b /= 10;
+    }
+
+
+    return 0;
+}
