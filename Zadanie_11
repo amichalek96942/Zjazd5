@@ -1,0 +1,64 @@
+Zadanie (0.10 pkt)
+Na wejściu podana jest liczba N (liczba dni), następnie N temperatur. Dla każdej temperatury określana jest kategoria używając switch (dzielenie przez 10): 
+
+- Poniżej 0: "MROZ" 
+
+- 0-9: "CHLOD" 
+
+- 10-19: "UMIARKOWANIE" 
+
+- 20-29:"CIEPLO" 
+
+- 30+: "UPAL" 
+
+Program zlicza dni w każdej kategorii i wyświetla tylko te kategorie, które wystąpiły.
+
+#include <stdio.h>
+
+int main() {
+
+    int N = 0; // liczba dni
+    int temperatura = 0;
+
+    scanf("%d", &N);
+
+    int mroz = 0;
+    int chlod = 0;
+    int umiarkowanie = 0;
+    int cieplo = 0;
+    int upal = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        scanf("%d", &temperatura);
+
+        if (temperatura < 0)
+        {
+            mroz++;
+        } else
+        {
+            switch (temperatura / 10)
+            {
+            case 0:
+                chlod++;
+                break;
+            case 1:
+                umiarkowanie++;
+                break;
+            case 2:
+                cieplo++;
+                break;
+            default:
+                upal++;
+            }
+        }
+    }
+
+if (mroz > 0) printf("MROZ: %d\n", mroz);
+if (chlod > 0) printf("CHLOD: %d\n", chlod);
+if (umiarkowanie > 0) printf("UMIARKOWANIE: %d\n", umiarkowanie);
+if (cieplo > 0) printf("CIEPLO: %d\n", cieplo);
+if (upal > 0) printf("UPAL: %d\n", upal);
+
+    return 0;
+}
