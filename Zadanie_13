@@ -1,0 +1,53 @@
+Zadanie (0.10 pkt)
+Program symuluje działanie bankomatu. Stan konta startuje z 1000 zł. Działanie odbywa się w pętli do-whilewyświetlającej menu:
+
+ - `1` = Wpłata (wczytywana jest kwota, dodawana do stanu) 
+
+- `2` = Wypłata (wczytywana jest kwota, odejmowana jeśli wystarczają środki, w przeciwnym razie wyświetlane jest `BRAK`) 
+
+- `3` = Stan konta(wyświetlany jest aktualny stan) 
+
+- `4` = Wyjście (zakończenie programu) Instrukcja switch obsługuje menu. Po każdej operacji (oprócz 3 i 4) wyświetlany jest nowy stan konta.
+
+#include <stdio.h>
+
+int main()
+{
+
+    int stan_konta = 1000;
+    int operacja = 0;
+    int kwota_operacji = 0;
+
+    do
+    {
+        scanf("%d", &operacja);
+
+        switch (operacja)
+        {
+        case 1:
+            scanf("%d", &kwota_operacji);
+            stan_konta = stan_konta + kwota_operacji;
+            printf("%d\n", stan_konta);
+            break;
+        case 2:
+            scanf("%d", &kwota_operacji);
+            if (kwota_operacji <= stan_konta)
+            {
+                stan_konta = stan_konta - kwota_operacji;
+                printf("%d\n", stan_konta);
+            } else
+            {
+                printf("BRAK\n");
+            }
+            break;
+        case 3:
+            printf("%d\n", stan_konta);
+            break;
+        case 4:
+            return 0;
+        }
+    } while (operacja > 0 && operacja < 5);
+
+
+    return 0;
+}
