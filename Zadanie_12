@@ -1,0 +1,39 @@
+Zadanie (0.10 pkt)
+Na wejściu podany jest rozmiar kwadratu N. Program rysuje kwadrat N×N wypełniony cyframi według reguły: na przekątnych (głównej i drugorzędnej) wyświetlany jest znak `X`, w pozostałych miejscach wyświetlana jest odległość od najbliższej przekątnej.
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+
+            if (i == j || i + j == N - 1) {
+                printf("X");
+            } else {
+                int d1 = i - j;
+                if (d1 < 0) d1 = -d1;   // ręczna wartość bezwzględna
+
+                int d2 = i + j - (N - 1);
+                if (d2 < 0) d2 = -d2;   // ręczna wartość bezwzględna
+
+                int d = d1 < d2 ? d1 : d2;
+                printf("%d", d);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
